@@ -36,7 +36,7 @@ export default {
     getType(type){
       var obj = {
         'a':'爱情',
-        'b':'健康',
+        'b':'事业',
         'c':'财富'
       }
       return obj[type];
