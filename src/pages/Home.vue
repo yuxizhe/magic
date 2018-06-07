@@ -100,6 +100,7 @@ export default {
       if(check == false){
         this.step = 4;
         this.index = this.info.length - 1;
+        this.$kiko_message('一天只能占卜一次哦，当前显示的是你今日占卜结果');
         return;
       }
       saveData({
