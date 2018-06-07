@@ -1,7 +1,11 @@
 <template>
       <section>
         <div class="second_neon" id="title">星云塔罗屋</div>
-        <div class="first_neon" style="font-size:14px" id="content-panel"></div>
+        <div class="first_neon" style="font-size:14px" id="content-panel">
+          <p>亲爱的用户，欢迎您来到塔罗占卜屋!</p>
+          <p>欢迎和我们一起踏上神奇的塔罗牌之旅，塔罗牌拥有神奇的力量，只要你愿意相信，这种力量就会显现出来，无论你原来是否相信，从这一刻起，请跟紧塔罗牌的脚步，在充满魔力的世界里，探寻你心中想要的真！</p>
+          <p>在开始洗牌之前，请在下方选择你要占卜的类型，并在心中默念你要问的问题，然后请按“下一步”开始洗牌。</p>
+        </div>
         <section class="list-pane" :style="{opacity:(showType ? 1 : 0)}">
           <div class="list" >
             <div class="item" :class="{'etc':type == 'a'}" @click="changeType('a')">
@@ -45,21 +49,12 @@ export default {
       }
     },
     initStep1(){
-      $("#content-panel").typeIt({
-        whatToType: [
-          "亲爱的用户，欢迎您来到塔罗占卜屋!",
-          "欢迎和我们一起踏上神奇的塔罗牌之旅，塔罗牌拥有神奇的力量，只要你愿意相信，这种力量就会显现出来，无论你原来是否相信，从这一刻起，请跟紧塔罗牌的脚步，在充满魔力的世界里，探寻你心中想要的真！",
-          "在开始洗牌之前，请在下方选择你要占卜的类型，并在心中默念你要问的问题，然后请按“下一步”开始洗牌。"
-        ],
-        typeSpeed: 10,
-        callback:() => {}
-      });
       //洗牌和切牌都已经顺利完成，下面进入关键性的一步——抽牌，请从22张牌中选出你的牌阵所需要的牌。
   　　 //抽牌的时候，请摒弃杂念，不要过多犹豫，相信第一感觉。点击“下一步”开始抽牌。
       //牌已经洗好了，继续集中你的注意力，默念你的问题，诚意是整个占卜过程中最重要的部份。因为只要诚意才能起动塔罗牌超自然的预知玄力，好了，现在我们开始切牌。
-      setTimeout(() => {
+      //setTimeout(() => {
         this.showType = true;
-      },12000);
+      //},5000);
     }
   },
   mounted(){

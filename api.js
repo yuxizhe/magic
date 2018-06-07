@@ -571,7 +571,7 @@ TheTarot.prototype = {
     var from = Blockchain.transaction.from;
 
     var tarot = this.getUserItem(from);
-    var names = tarot.names;
+    var names = tarot.names || [];
     // if (names.length > 0) {
     //   let _item = names[names.length - 1];
     //   let date = new Date();

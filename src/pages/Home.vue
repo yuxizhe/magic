@@ -67,25 +67,14 @@ export default {
       this.index = this.info.length - 1;
     },
     getInfo(flag) {
-      var callArgs = JSON.stringify([this.account]); //in the form of ["args"]
-      var callFunction = "getUserList";
-      var contract = {
-        "function": callFunction,
-        "args": callArgs
-      }
-      var from = Account.NewAccount().getAddressString();
-      var value = "0";
-      var nonce = "0";
-      var gas_price = "1000000";
-      var gas_limit = "2000000";
       var _this = this;
-      neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function(resp) {
-        _this.resultBack(JSON.parse(resp.result));
+      queryData("getUserList", [this.account], (res) => {
+         _this.resultBack(JSON.parse(res.result));
         if(flag){
           _this.step = 4;
         }
-      }).catch(function(err) {
-        console.log(err)
+      },res => {
+        console.log(res)
       })
     },
     check(){
@@ -111,7 +100,7 @@ export default {
       }
       saveData({
         callFunction: 'saveUser',
-        callArgs: "[\"" + this.type + "\"]",
+        callArgs: [this.type],
         sucess: async (res) => {
           //成功
           _this.getInfo(true);

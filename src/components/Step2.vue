@@ -1,6 +1,7 @@
 <template>
   <section>
-    <div class="second_neon" id="title">洗牌</div>
+    <div class="second_neon" id="title" v-if="!isSelected">洗牌</div>
+    <div class="second_neon" id="title" v-if="isSelected">选牌</div>
     <div class="xipai-box" v-if="!isSelected">
       <div class="xipai-panel" :class="{'move':isAnimate}">
         <img class="left normal" :class="{'transition':isAnimate}" src="../assets/bg1.jpg" />
@@ -10,6 +11,7 @@
         <img style="right:-440px" src="../assets/bg1.jpg" />
       </div>
     </div>
+    <p v-if="isSelected" style="color:#fff;">牌已经洗好了，继续集中你的注意力，默念你的问题，诚意是整个占卜过程中最重要的部份。因为只要诚意才能起动塔罗牌超自然的预知玄力,下面进入关键性的一步——抽牌，请从22张牌中选出你所需要的牌</p>
     <ul class="card-list" v-if="isSelected">
       <li @click="initStep3" v-for="(item,index) in data" :key="index" :style="{'animation-delay':index * 0.1 + 's'}">
         <img src='../assets/bg1.jpg' />
@@ -61,7 +63,7 @@ export default {
 
 .card-list li {
   width: 80px;
-  height: 95px;
+  height: 90px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
