@@ -11,7 +11,9 @@
       <div @click="changeStep(5)" :class='{"etc":step == 5 }'>我的</div>
       <div @click="changeStep(6)" :class='{"etc":step == 6 }'>关于</div>
     </div>
-  </div>
+    <audio src="../1.mp3" controls="controls">
+    </audio>
+    </div>
 </template>
 <script>
 import { saveData, queryData, getuserAdress,Account,neb,dappAddress } from '../request';
