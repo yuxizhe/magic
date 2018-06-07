@@ -3,7 +3,7 @@
     <div style='font-size:24px;'>我的占卜记录</div>
     <div class="list-panel">
       <div class="list-img">
-        <img src='../assets/22.jpg' />
+        <img src='../assets/33.jpg' />
       </div>
       <div class="list-box">
         <div v-if="list" @click="showResult(index)" class='list-item' v-for="(item,index) in list" :key="index">
@@ -54,7 +54,8 @@ export default {
   }
    .list-panel .list-img img{
      max-width: 100%;
-     margin: 15px 0;
+     margin-top: 10px;
+     border-radius: 10px;
    }
   .list-item{
     cursor: pointer;
@@ -68,8 +69,8 @@ export default {
   }
   .list-box{
     padding-left: 50px;
-    padding-top:20px;
-    max-height: 380px;
+    padding-top:10px;
+    max-height: 320px;
     overflow-y: auto;
   }
 </style>
