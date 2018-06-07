@@ -11,7 +11,8 @@
       <div @click="changeStep(5)" :class='{"etc":step == 5 }'>我的</div>
       <div @click="changeStep(6)" :class='{"etc":step == 6 }'>关于</div>
     </div>
-    <audio src="../1.mp3" controls="controls">
+    <audio autoplay loop>
+      <source src="https://spring001.github.io/magic/src/1.mp3" type="audio/mpeg">
     </audio>
     </div>
 </template>
